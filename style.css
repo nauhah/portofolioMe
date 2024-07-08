@@ -43,7 +43,7 @@ nav {
 .nav-links {
   gap: 2rem;
   list-style: none;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 a {
@@ -393,7 +393,6 @@ article .icon {
   flex-direction: column;
   height: 70vh;
 }
-
 .contact-info-upper-container {
   display: flex;
   justify-content: center;
@@ -429,7 +428,7 @@ article .icon {
 
 footer {
   height: 25vh;
-  margin: 0 1rem;
+  margin: 0;
   background-color: #353535;
 }
 footer nav .nav-links-container .nav-links li a{
