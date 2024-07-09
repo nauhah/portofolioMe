@@ -48,12 +48,15 @@
 }
 
 @media screen and (max-width: 600px) {
-  #contact,
+  #contact
+  {
+    height: 45vh;
+  }
   footer {
-    height: 40vh;
+    height: 30vh;
   }
   #profile {
-    height: 83vh;
+    height: 70vh;
     margin-bottom: 0;
   }
   article {
@@ -69,7 +72,7 @@
     flex-wrap: wrap;
   }
   .contact-info-container {
-    margin: 0;
+    margin: 2px;
   }
   .contact-info-container p,
   .nav-links li a {
