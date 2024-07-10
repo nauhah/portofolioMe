@@ -183,6 +183,9 @@ section {
   align-self: center;
   text-align: center;
 }
+.section__text .title{
+  font-size: 73px;
+}
 
 .section__text p {
   font-weight: 600;
