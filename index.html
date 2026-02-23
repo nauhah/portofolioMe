@@ -1,293 +1,1091 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg" href="assets/iconMe.svg">
-  <title>Arnaud OUED. | Portofolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mediaqueries.css" />
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arnaud OUEDRAOGO | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root {
+            --bg-color: #0f172a;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --card-bg: #1e293b;
+            --transition: all 0.3s ease;
 
-<body>
-  <nav id="desktop-nav">
-    <div class="logo"><strong>Arnaud <span>OUED.</span></strong></div>
-    <div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-  <nav id="hamburger-nav">
-    <div class="logo"><strong>Arnaud <span>OUED.</span></strong></div>
-    <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="menu-links">
-        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Experience</a><li>
-        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-      </div>
-    </div>
-  </nav>
-  <section id="profile">
-    <!-- <div class="section__pic-container">
-      <img src="./assets/profile-pic.png" alt="John Doe profile picture" />
-    </div> -->
-    <div class="section__text">
-      <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title">Arnaud OUEDRAOGO</h1>
-      <p class="section__text__p2">FullStack Developer | Designer</p>
-      <div class="btn-container">
-        <button class="btn btn-color-2" onclick="window.open('./assets/ArnaudCV-FR.pdf')">
-          Download CV
-        </button>
-        <button class="btn btn-color-1" href="#contact" onclick="location.href='./#contact'">
-          Contact Info
-        </button>
-      </div>
-      <div id="socials-container">
-        <img target="_blank" src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
-          onclick="location.href='https://www.linkedin.com/in/arnaud-ouedraogo-17aa90238/'" />
-        <img target="_blank" src="./assets/github.png" alt="My Github profile" class="icon"
-          onclick="location.href='https://github.com/nauhah'" />
-      </div>
-    </div>
-  </section>
-  <section id="about">
-    <p class="section__text__p1">Get To Know More</p>
-    <h1 class="title">About Me</h1>
-    <div class="section-container">
-      <div class="section__pic-container">
-        <img src="./assets/me.png" alt="Profile picture" class="about-pic" />
-      </div>
-      <div class="about-details-container">
-        <div class="text-container">
-          <p>
-            Hi! I am a passionate web and graphic designer with 3
-            years of experience. Specializing in creating intuitive
-            user interfaces and impactful visuals, I am constantly
-            looking for new and stimulating challenges. Available
-            to discuss your web and graphic design needs.
-          </p>
-        </div><br>
-        <div class="about-containers">
-          <div class="details-container">
-            <img src="./assets/experience.png" alt="Experience icon" class="icon" />
-            <h3>Experience</h3>
-            <p>4 years <br />Graphique Design</p>
-          </div>
-          <div class="details-container">
-            <img src="./assets/education.png" alt="Education icon" class="icon" />
-            <h3>Education</h3>
-            <p>Bachelors Degree (IT)</p>
-          </div>
-        </div>
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* --- BASE STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* font-family: 'Inter', sans-serif; */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden; /* Empêche le scroll horizontal */
+            width: 100vw;
+            font-family: var(--font-body);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
         
-      </div>
-    </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
-  </section>
-  <section id="experience">
-    <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Experience</h1>
-    <div class="experience-details-container">
-      <div class="about-containers">
-        <div class="details-container">
-          <h2 class="experience-sub-title">My Skills</h2>
-          <div class="article-container">
-            <article>
-              <img src="./assets/html.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>HTML</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/css-3.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>CSS</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/js.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>JavaScript</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/python.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Python</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/bootstrap.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Bootstrap</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/tailwind.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>tailwind CSS</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            
-            <article>
-              <img src="./assets/gite.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Git</h3>
-                <p>Experience</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/laravel.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Laravel</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/figma.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Figma</h3>
-                <p>Good</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/photoshop.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Photoshop</h3>
-                <p>Good</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/illustrateur.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Illustrator</h3>
-                <p>Good</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/pinterest.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3><Pre></Pre>Pinterest</h3>
-                <p>Experience</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/code.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>VS code</h3>
-                <p>Experience</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/linux.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Linux</h3>
-                <p>Experience</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
-  </section>
-  <section id="projects">
-    <p class="section__text__p1">Browse My Recent</p>
-    <h1 class="title">Projects</h1>
-    <div class="experience-details-container">
-      <div class="about-containers">
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/2.png" alt="Project 1" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">My designs</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://drive.google.com/drive/u/2/folders/1s-h-1ZfGOaL0-JCtciGEGVBbSEULwN-r/'">
-              Learn More
-            </button>
-           
-          </div>
-        </div>
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/3.png" alt="Project 2" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">Passport_Education</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://passport-education.com/'">
-              Learn More
-            </button>
-            
-          </div>
-        </div>
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/1.png" alt="Project 3" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">Design App</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.figma.com/design/ygji7sSsJYiWOhnUoR89D9/Anti-corruption-App?m=auto&t=owJWenIJ2Zeun2Gu-6'">
-              Learn More
-            </button>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
-  </section>
+        h1, h2, h3, .logo, .btn, .nav-links a {
+            font-family: var(--font-heading);
+        }
 
-  <section id="contact">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
-      <div class="contact-info-container">
-        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-        <p><a href="mailto:waoued24@gmail.com">waoued24@gmail.com</a></p>
-      </div>
-      <div class="contact-info-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a target="_blank" href="https://www.linkedin.com/in/arnaud-ouedraogo-17aa90238/">LinkedIn</a></p>
-      </div>
-      <div class="contact-info-container">
-        <img src="./assets/github.png" alt="github icon" class="icon contact-icon" />
-        <p><a target="_blank" href="https://www.github.com/nauhah">github</a></p>
-      </div>
+        /* --- NAVIGATION & SMOOTH SCROLL --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent; /* Complètement transparent tout en haut */
+            backdrop-filter: none; /* Pas de flou au départ */
+            -webkit-backdrop-filter: none;
+            z-index: 1000;
+            transition: all 0.4s ease; /* Transition très douce pour l'apparition */
+            border-bottom: 1px solid transparent;
+            padding: 10px 0; /* Le menu est légèrement plus grand en haut... */
+        }
+
+        header.scrolled {
+            background-color: rgba(15, 23, 42, 0.85); /* La couleur sombre apparaît au scroll */
+            backdrop-filter: blur(15px); /* Le flou apparaît au scroll */
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--card-bg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            padding: 0; /* ...et reprend sa taille normale en descendant */
+        }
+
+        /* header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid transparent;
+        }
+
+        header.scrolled {
+            border-bottom: 1px solid var(--card-bg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        } */
+
+        /* --- BACKGROUND ORBS ANIMATION --- */
+        .ambient-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1; /* Reste derrière tout le site */
+            overflow: hidden;
+            pointer-events: none; /* Empêche les orbes de bloquer les clics sur les boutons */
+        }
+
+        .orb-wrapper {
+            position: absolute;
+            transition: transform 0.3s ease-out; /* Pour le mouvement fluide de la souris */
+        }
+
+        .orb {
+            border-radius: 50%;
+            filter: blur(100px); /* Le secret de l'effet "Aurore" */
+            opacity: 0.5; /* Légèrement transparent pour ne pas gêner la lecture */
+            animation: floatOrb 20s infinite alternate ease-in-out;
+        }
+
+        /* Orbe 1 : Cyan (Ton accent) */
+        .orb-w1 { top: -10%; left: -10%; }
+        .orb-1 {
+            width: 50vw;
+            height: 50vw;
+            max-width: 600px;
+            max-height: 600px;
+            background: rgba(56, 189, 248, 0.4); 
+            animation-delay: 0s;
+        }
+
+        /* Orbe 2 : Violet / Indigo Tech */
+        .orb-w2 { bottom: -20%; right: -10%; }
+        .orb-2 {
+            width: 60vw;
+            height: 60vw;
+            max-width: 700px;
+            max-height: 700px;
+            background: rgba(99, 102, 241, 0.3);
+            animation-delay: -5s;
+        }
+
+        /* Orbe 3 : Bleu foncé */
+        .orb-w3 { top: 40%; left: 40%; }
+        .orb-3 {
+            width: 40vw;
+            height: 40vw;
+            max-width: 500px;
+            max-height: 500px;
+            background: rgba(14, 165, 233, 0.2);
+            animation-delay: -10s;
+        }
+
+        /* L'animation autonome de flottement */
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(50px, -50px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: 1px;
+            z-index: 1002; /* Garde le logo au-dessus du menu mobile */
+            position: relative;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            color: var(--text-main);
+            cursor: pointer;
+            z-index: 1002; /* Garde le burger au-dessus du menu mobile */
+            position: relative;
+        }
+
+        /* --- LAYOUT & SECTIONS --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            overflow: hidden; /* Sécurité supplémentaire contre le dépassement */
+        }
+
+        section {
+            padding: 100px 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* --- ICONS ALIGNMENT --- */
+        .btn, .contact-item, .project-links a, .social-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            flex-wrap: wrap; /* Évite que les boutons ne cassent l'écran */
+        }
+        
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 50px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+
+        /* --- HERO SECTION --- */
+        #hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            word-wrap: break-word; /* Force le texte à la ligne si trop long */
+        }
+
+        #hero h1 span {
+            color: var(--accent);
+        }
+
+        #hero h2 {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        #hero p {
+            max-width: 600px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            background-color: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 10px; /* Espace si les boutons s'empilent */
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            color: var(--bg-color);
+        }
+
+        /* --- EXPERIENCE SECTION --- */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .timeline-item {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-company {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- SKILLS SECTION --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .skill-list {
+            list-style: none;
+            color: var(--text-muted);
+        }
+
+        .skill-list li {
+            margin-bottom: 8px;
+        }
+
+        /* --- PROJECTS SECTION --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+        }
+
+        .project-image {
+            height: 200px;
+            background-color: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-weight: 600;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .project-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .project-tags span {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            border-width: 1px;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-muted);
+            word-break: break-word;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--bg-color);
+            border: 1px solid #334155;
+            border-radius: 6px;
+            color: var(--text-main);
+            transition: var(--transition);
+            font-family: var(--font-body);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            text-align: center;
+            background-color: var(--accent);
+            color: var(--bg-color);
+            border: none;
+            font-size: 1rem;
+            padding: 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background-color: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid var(--card-bg);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* --- ANIMATIONS (Scroll Reveal) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- GRAPHIC DESIGN SECTION (NAUD Conception) --- */
+        .design-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .design-header h3 {
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .design-header p {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .design-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 1 / 1; /* Force un format parfaitement carré ! */
+            background-color: var(--card-bg);
+            cursor: pointer;
+        }
+
+        .design-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Permet à l'image de remplir le carré sans se déformer */
+            transition: transform 0.5s ease;
+        }
+
+        .design-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 23, 42, 0.85); /* Fond sombre semi-transparent */
+            backdrop-filter: blur(4px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .design-item:hover img {
+            transform: scale(1.1); /* Effet de zoom fluide */
+        }
+
+        .design-item:hover .design-overlay {
+            opacity: 1; /* Apparition du texte */
+        }
+
+        .design-overlay h4 {
+            color: var(--text-main);
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            font-family: var(--font-heading);
+        }
+
+        .design-overlay p {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN (MOBILES & TABLETTES) 
+           ========================================= */
+        @media (max-width: 768px) {
+            /* Typographie réduite pour éviter le scroll horizontal */
+            #hero h1 { font-size: 2.5rem; }
+            #hero h2 { font-size: 1.2rem; }
+            #hero p { font-size: 1rem; }
+            .section-title { font-size: 2rem; }
+            
+            section {
+                padding: 80px 0 40px;
+                min-height: auto;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .timeline-item {
+                padding: 20px;
+            }
+
+            /* --- MENU MOBILE (SIDE DRAWER) --- */
+            .menu-toggle {
+                display: block; 
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%; /* Caché hors écran */
+                width: 250px;
+                height: 100vh;
+                background-color: rgba(30, 41, 59, 0.98);
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
+                z-index: 1001; /* Doit être sous le bouton burger (z-index 1002) */
+                margin: 0;
+                padding: 0;
+            }
+
+            .nav-links.active {
+                right: 0; 
+            }
+
+            .nav-links li {
+                margin: 20px 0;
+            }
+
+            .nav-links a {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-background">
+        <div class="orb-wrapper orb-w1">
+            <div class="orb orb-1"></div>
+        </div>
+        <div class="orb-wrapper orb-w2">
+            <div class="orb orb-2"></div>
+        </div>
+        <div class="orb-wrapper orb-w3">
+            <div class="orb orb-3"></div>
+        </div>
     </div>
-  </section>
-  <footer>
-    <nav>
-      <div class="nav-links-container">
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <p> © 2024 | Arnaud OUEDRAOGO <p>
-  </footer>
-  <script src="script.js"></script>
+
+    <header id="header">
+        <div class="nav-container">
+            <a href="#hero" class="logo">Arnaud<span>.</span></a>
+            
+            <ul class="nav-links">
+                <li><a href="#experience">Expériences</a></li>
+                <li><a href="#projects">Projets Web</a></li>
+                <li><a href="#graphic-design">Design</a></li> 
+                <li><a href="#skills">Expertises</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="hero" class="reveal">
+            <h2>Bonjour, je suis</h2>
+            <h1>Arnaud <span>OUEDRAOGO</span>.</h1>
+            <h2>Ingénieur IT | Développeur FullStack | UI/UX Designer</h2>
+            <p>Polyvalent et rigoureux, j'interviens sur toute la chaîne informatique : du support utilisateur à la conception de solutions digitales complètes (Laravel, React, UI/UX), pour garantir la performance de vos outils.</p>
+            <div>
+                <a href="#contact" class="btn"><i class='bx bx-envelope'></i> Me Contacter</a>
+                <a href="https://github.com/nauhah" target="_blank" class="btn" style="margin-left: 10px; border-color: var(--text-muted); color: var(--text-muted);">
+                    <i class='bx bxl-github'></i> GitHub
+                </a>
+            </div>
+        </section>
+
+        <section id="experience" class="reveal">
+            <h2 class="section-title">Expériences Récentes</h2>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">03/2025 - 09/2025</div>
+                    <h3 class="timeline-title">Programmeur FullStack (Laravel-React Js)</h3>
+                    <div class="timeline-company">ANPTIC, Ouagadougou</div>
+                    <p>Conception d'une application de gestion de la mutuelle de l'ANPTIC.</p>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">11/2024 - 02/2025</div>
+                    <h3 class="timeline-title">Programmeur Full Stack (CodeIgniter)</h3>
+                    <div class="timeline-company">BBC-Partners, Ouagadougou</div>
+                    <p>Développement de Module de réapprovisionnement pour le logiciel Maintex (GMAO).</p>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">05/2024 - 09/2024</div>
+                    <h3 class="timeline-title">Programmeur (Laravel, Bootstrap)</h3>
+                    <div class="timeline-company">BBI, Ouagadougou</div>
+                    <p>Développement de fonctionnalités et collaboration technique.</p>
+                </div>
+                
+                <div class="timeline-item reveal">
+                    <div class="timeline-date">2020 - Présent</div>
+                    <h3 class="timeline-title">Designer Graphique & Web / Support IT</h3>
+                    <div class="timeline-company">Freelance</div>
+                    <p>Design d'interfaces (Figma, Illustrator) et maintenance préventive de parcs informatiques.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="reveal">
+            <h2 class="section-title">Projets & Maquettes</h2>
+            <div class="projects-grid">
+
+                <div class="project-card reveal">
+                    <div class="project-image" style="background-image: url('./assets/h.jpg');"></div>
+                    <div class="project-content">
+                        <h3>Plateforme de Gestion de Mutuelle</h3>
+                        <p>Conception et développement d'une application interne complexe. Digitalisation complète des processus, de la gestion des cotisations au tableau de bord des adhérents, avec une attention particulière portée sur l'UX.</p>
+                        <div class="project-tags">
+                            <span>React.js</span>
+                            <span>Laravel</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn btn-small"><i class='bx bx-search-alt-2'></i> Étude de cas</a>
+                            <span style="font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; margin-left: 10px;">
+                                <i class='bx bx-lock-alt' style="margin-right: 5px;"></i> Projet Privé
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-image" style="background-image: url('./assets/Alish.jpg');"></div>
+                    <div class="project-content">
+                        <h3>Alish Food - Identité Visuelle</h3>
+                        <p>Création complète du logo et du branding pour une entreprise de restauration rapide (fast-food) en ligne basée à Ouagadougou. Conception d'une identité visuelle moderne, dynamique et adaptée à la commande digitale.</p>
+                        <div class="project-tags">
+                            <span>Création de Logo</span>
+                            <span>Branding</span>
+                            <span>Design Graphique</span>
+                            <span>Illustrator</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="./assets/Alish.jpg" class="btn btn-small"><i class='bx bx-palette'></i> Voir la Charte Graphique</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-image" style="background-image: url('./assets/1.png');"></div>
+                    <div class="project-content">
+                        <h3>Design d'Interfaces (UI/UX)</h3>
+                        <p>Sélection de maquettes web et mobiles réalisées sur Figma, illustrant mon approche centrée sur l'utilisateur et le design moderne.</p>
+                        <div class="project-tags">
+                            <span>Figma</span>
+                            <span>UI/UX Design</span>
+                            <span>Prototypage</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.figma.com/design/ygji7sSsJYiWOhnUoR89D9/Anti-corruption-App?m=auto&t=owJWenIJ2Zeun2Gu-6" class="btn btn-small">Voir sur Figma</a>
+                            <a href="https://pin.it/5WZ0Vk1uj" class="btn btn-small" style="border-color: var(--text-muted); color: var(--text-muted);">Pinterest</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+            <section id="graphic-design" class="reveal">
+            <h2 class="section-title">Design Graphique</h2>
+            
+            <div class="design-header reveal">
+                <h3>NAUD Conception</h3>
+                <p>En parallèle de mes activités de développement, je pilote NAUD Conception, ma structure dédiée à la création graphique. De l'élaboration de logos percutants à la conception de flyers publicitaires et supports visuels, j'accompagne les marques dans la construction de leur identité.</p>
+            </div>
+
+            <div class="design-grid">
+                
+                <div class="design-item reveal">
+                    <img src="./assets/NaudConception2.jpg" alt="Logo NAUD Conception">
+                    <div class="design-overlay">
+                        <h4>NAUD Conception</h4>
+                        <p>Identité Visuelle Officielle</p>
+                    </div>
+                </div>
+
+                <div class="design-item reveal">
+                    <img src="./assets/perllage_fal33.jpg" alt="Flyer Publicitaire">
+                    <div class="design-overlay">
+                        <h4>Affiche Publicitaire</h4>
+                        <p>Design de Flyer</p>
+                    </div>
+                </div>
+
+                <div class="design-item reveal">
+                    <img src="./assets/logo_ILBC.jpg" alt="Logo Client">
+                    <div class="design-overlay">
+                        <h4>Projet Branding</h4>
+                        <p>Création de Logo</p>
+                    </div>
+                </div>
+
+                <div class="design-item reveal">
+                    <img src="./assets/Naud_WEEK.jpg" alt="Réseaux Sociaux">
+                    <div class="design-overlay">
+                        <h4>Réseaux Sociaux</h4>
+                        <p>Visuel Promotionnel</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="reveal" style="text-align: center; margin-top: 40px;">
+                <a href="https://drive.google.com/drive/u/2/folders/1s-h-1ZfGOaL0-JCtciGEGVBbSEULwN-r/" class="btn"><i class='bx bx-images'></i> Voir toutes mes créations</a>
+            </div>
+        </section>
+
+        <section id="skills" class="reveal">
+            <h2 class="section-title">Expertises</h2>
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <i class='bx bx-code-alt skill-icon'></i>
+                    <h3>Développement</h3>
+                    <ul class="skill-list">
+                        <li>React.js & JavaScript</li>
+                        <li>Laravel & CodeIgniter</li>
+                        <li>Bootstrap & CSS Moderne</li>
+                        <li>Python & SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <i class='bx bx-palette skill-icon'></i>
+                    <h3>Design & Data</h3>
+                    <ul class="skill-list">
+                        <li>Figma (UI/UX)</li>
+                        <li>Illustrator & Photoshop</li>
+                        <li>Power BI & Excel Avancé</li>
+                        <li>Analyse de données</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <i class='bx bx-server skill-icon'></i>
+                    <h3>Systèmes & Réseaux</h3>
+                    <ul class="skill-list">
+                        <li>Windows 10/11 & Office 365</li>
+                        <li>Maintenance Hardware</li>
+                        <li>Câblage RJ45 & Routage</li>
+                        <li>Support Helpdesk</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+     
+
+        <section id="contact" class="reveal">
+            <h2 class="section-title">Me Contacter</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Travaillons ensemble</h3>
+                    <p>Que ce soit pour une opportunité au sein de votre équipe, un projet freelance en conception d'interface ou en développement web, n'hésitez pas à m'écrire. Je réponds généralement sous 24 heures.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class='bx bx-envelope' style="font-size: 1.5rem; color: var(--accent);"></i>
+                            <div>
+                                <strong>Email :</strong><br> waoued24@gmail.com
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class='bx bx-phone' style="font-size: 1.5rem; color: var(--accent);"></i>
+                            <div>
+                                <strong>Téléphone :</strong><br> +226 51 19 49 49
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class='bx bx-map' style="font-size: 1.5rem; color: var(--accent);"></i>
+                            <div>
+                                <strong>Localisation :</strong><br> Tanghin, Ouagadougou
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    
+                    <input type="hidden" name="access_key" value="9bb7fbf1-da05-4c28-9d62-645f420c6503">
+                    
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" class="form-control" required placeholder="Ex: Gon Freecs">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Adresse Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required placeholder="Ex: gon@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Votre Message</label>
+                        <textarea id="message" name="message" class="form-control" required placeholder="Bonjour Arnaud, je vous contacte pour..."></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="redirect" value="https://arnaud-ouedraogo.vercel.app/">
+                    
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    
+                    <button type="submit" class="btn btn-submit">Envoyer le message</button>
+                </form>
+            </div>
+        </section>
+
+       
+
+        <footer>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/arnaud-ouedraogo-17aa90238/" target="_blank">
+                    <i class='bx bxl-linkedin-square'></i> LinkedIn
+                </a>
+                <a href="https://github.com/nauhah" target="_blank">
+                    <i class='bx bxl-github'></i> GitHub
+                </a>
+                <a href="mailto:waoued24@gmail.com">
+                    <i class='bx bx-envelope'></i> Email
+                </a>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">© 2026 Arnaud OUEDRAOGO.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            // Gestion du Menu Mobile
+            const mobileMenuBtn = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            const mobileIcon = mobileMenuBtn.querySelector('i');
+
+            // Ouvrir/Fermer le menu au clic sur l'icône
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                
+                // Animation de l'icône (Menu <-> Croix)
+                if (navLinks.classList.contains('active')) {
+                    mobileIcon.classList.replace('bx-menu', 'bx-x');
+                } else {
+                    mobileIcon.classList.replace('bx-x', 'bx-menu');
+                }
+            });
+
+            // --- ANIMATION BACKGROUND (PARALLAXE SOURIS) ---
+            const wrappers = document.querySelectorAll('.orb-wrapper');
+            
+            // Ne s'active que sur les écrans d'ordinateur (pas de souris sur mobile)
+            if (window.innerWidth > 768) {
+                window.addEventListener('mousemove', (e) => {
+                    const mouseX = e.clientX / window.innerWidth - 0.5;
+                    const mouseY = e.clientY / window.innerHeight - 0.5;
+
+                    wrappers.forEach((wrapper, index) => {
+                        // Chaque orbe bouge à une vitesse différente pour l'effet 3D
+                        const speed = (index + 1) * 30; 
+                        const x = mouseX * speed;
+                        const y = mouseY * speed;
+                        
+                        // Mouvement inversé par rapport à la souris
+                        wrapper.style.transform = `translate(${-x}px, ${-y}px)`;
+                    });
+                });
+            }
+
+            // Fermer automatiquement le menu quand on clique sur un lien (très important pour le UX)
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileIcon.classList.replace('bx-x', 'bx-menu');
+                });
+            });
+
+            // Effet ombre sur le Header au scroll
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // L'animation ne se joue qu'une fois
+                    }
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+        });
+    </script>
 </body>
-
 </html>
